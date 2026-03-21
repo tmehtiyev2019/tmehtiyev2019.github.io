@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tural Mehtiyev — CS PhD Student | ML Engineer</title>
-    <meta name="description" content="Tural Mehtiyev — CS PhD student at NC State University. Machine Learning Engineer specializing in LLM evaluation, HPC, and deep learning.">
+    <title>Tural Mehtiyev — Data Scientist | CS PhD Student</title>
+    <meta name="description" content="Tural Mehtiyev — Data Scientist and CS PhD student at NC State University. 5+ years of industry experience in A/B testing, causal inference, and predictive modeling.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -95,13 +95,13 @@
             letter-spacing: -0.02em;
         }
 
-        .nav-links { display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
 
         .nav-links a {
             color: var(--text-muted);
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 8px;
             transition: color var(--transition), background var(--transition);
         }
@@ -121,7 +121,7 @@
             line-height: 1;
             transition: background var(--transition), border-color var(--transition);
             color: var(--text);
-            margin-left: 8px;
+            margin-left: 4px;
         }
 
         .theme-toggle:hover { background: var(--tag-bg); }
@@ -195,46 +195,57 @@
             pointer-events: none;
         }
 
-        .hero-content { position: relative; width: 100%; }
-
-        .hero-badge {
-            display: inline-flex;
+        .hero-content {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
             align-items: center;
-            gap: 8px;
-            background: var(--accent-subtle);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            padding: 6px 16px;
-            font-size: 0.825rem;
-            font-weight: 500;
-            color: var(--accent);
-            margin-bottom: 28px;
         }
 
-        .hero-badge .dot {
-            width: 7px; height: 7px;
-            background: #34d399;
+        .hero-text { position: relative; }
+
+        .hero-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-photo img {
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+            object-fit: cover;
+            border: 4px solid var(--border);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+            transition: border-color var(--transition), box-shadow var(--transition);
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+        .hero-photo img:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 40px rgba(96, 165, 250, 0.2);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
             font-weight: 800;
             letter-spacing: -0.04em;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
         }
 
         .hero h1 .accent { color: var(--accent); }
 
-        .hero-subtitle {
+        .hero-role {
             font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
             color: var(--text-muted);
             max-width: 600px;
             line-height: 1.7;
@@ -286,7 +297,7 @@
         /* ===== Skills ===== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
         }
 
@@ -373,13 +384,8 @@
             letter-spacing: -0.01em;
         }
 
-        .project-card h3 a {
-            color: var(--text);
-        }
-
-        .project-card h3 a:hover {
-            color: var(--accent);
-        }
+        .project-card h3 a { color: var(--text); }
+        .project-card h3 a:hover { color: var(--accent); }
 
         .project-card .arrow {
             color: var(--text-muted);
@@ -402,7 +408,7 @@
 
         .project-card .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
-        /* ===== Education ===== */
+        /* ===== Timeline (Education & Experience) ===== */
         .timeline { display: flex; flex-direction: column; gap: 0; }
 
         .timeline-item {
@@ -459,6 +465,52 @@
         .timeline-sub {
             font-size: 0.9rem;
             color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .timeline-gpa {
+            font-size: 0.825rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .timeline-detail {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+        .timeline-bullets li {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .timeline-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+
+        .timeline-bullets li strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         /* ===== Certifications ===== */
@@ -511,7 +563,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 12px;
-            margin-top: 48px;
         }
 
         .lang-card {
@@ -567,8 +618,29 @@
 
         .contact-section p {
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             font-size: 1.05rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 28px;
+            transition: all var(--transition);
+        }
+
+        .contact-email:hover {
+            background: var(--accent-subtle);
+            border-color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .social-links {
@@ -640,10 +712,25 @@
 
             .hero h1 { font-size: 2.2rem; }
 
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text { order: 2; }
+            .hero-photo { order: 1; }
+
+            .hero-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .hero-links { justify-content: center; }
+
             .projects-grid { grid-template-columns: 1fr; }
-
             .skills-grid { grid-template-columns: 1fr; }
-
             .section-title { font-size: 1.6rem; margin-bottom: 32px; }
         }
 
@@ -652,6 +739,10 @@
             .btn { width: 100%; justify-content: center; }
             .certs-grid { grid-template-columns: 1fr; }
             .languages-grid { grid-template-columns: 1fr 1fr; }
+            .hero-photo img {
+                width: 160px;
+                height: 160px;
+            }
         }
     </style>
 </head>
@@ -665,8 +756,8 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
             <a href="#education">Education</a>
-            <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                 <span id="themeIcon">&#9789;</span>
@@ -686,18 +777,11 @@
 <!-- Hero -->
 <section class="hero" id="about">
     <div class="container hero-content">
-        <div class="reveal">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Open to research collaborations
-            </div>
+        <div class="hero-text reveal">
             <h1>Tural <span class="accent">Mehtiyev</span></h1>
+            <p class="hero-role">Data Scientist &middot; CS PhD Student at NC State</p>
             <p class="hero-subtitle">
-                CS PhD student at North Carolina State University researching
-                <strong>machine learning</strong>, <strong>LLM evaluation</strong>,
-                and <strong>high-performance computing</strong>. Data scientist with a
-                strong software engineering foundation, building systems that bridge
-                research and production.
+                Data scientist pursuing PhD with business-technical background and 5+ years industry experience applying statistical rigor to product decisions through A/B testing, causal inference, and predictive modeling. Research develops systematic frameworks for failure diagnosis and root cause analysis in LLM-powered agents.
             </p>
             <div class="hero-links">
                 <a href="https://github.com/tmehtiyev2019" target="_blank" rel="noopener" class="btn btn-primary">
@@ -709,6 +793,9 @@
                     LinkedIn
                 </a>
             </div>
+        </div>
+        <div class="hero-photo reveal">
+            <img src="photo.jpeg" alt="Tural Mehtiyev" />
         </div>
     </div>
 </section>
@@ -722,52 +809,53 @@
         </div>
         <div class="skills-grid">
             <div class="skill-card reveal">
-                <h3><span class="icon">&#128187;</span> Languages</h3>
+                <h3><span class="icon">&#128187;</span> Programming &amp; Data Wrangling</h3>
                 <div class="skill-tags">
                     <span class="tag">Python</span>
-                    <span class="tag">C</span>
-                    <span class="tag">C++</span>
-                    <span class="tag">Java</span>
                     <span class="tag">SQL</span>
-                    <span class="tag">CUDA</span>
+                    <span class="tag">Excel</span>
+                    <span class="tag">SAS</span>
+                    <span class="tag">Spark</span>
+                    <span class="tag">Hadoop</span>
                 </div>
             </div>
             <div class="skill-card reveal">
-                <h3><span class="icon">&#129302;</span> ML / AI</h3>
+                <h3><span class="icon">&#128202;</span> Statistics &amp; Experimentation</h3>
+                <div class="skill-tags">
+                    <span class="tag">A/B Testing</span>
+                    <span class="tag">Hypothesis Testing</span>
+                    <span class="tag">EDA</span>
+                    <span class="tag">Inferential Statistics</span>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <h3><span class="icon">&#129302;</span> Machine Learning &amp; AI</h3>
                 <div class="skill-tags">
                     <span class="tag">PyTorch</span>
-                    <span class="tag">TensorFlow</span>
                     <span class="tag">Scikit-learn</span>
-                    <span class="tag">SentenceTransformers</span>
-                    <span class="tag">LLMs (GPT, Gemini)</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">LLM</span>
+                    <span class="tag">Agents</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">MCP</span>
+                    <span class="tag">MLOps</span>
                 </div>
             </div>
             <div class="skill-card reveal">
-                <h3><span class="icon">&#9889;</span> HPC</h3>
+                <h3><span class="icon">&#9729;</span> Cloud &amp; Tools</h3>
                 <div class="skill-tags">
-                    <span class="tag">MPI</span>
-                    <span class="tag">OpenMP</span>
-                    <span class="tag">SIMD</span>
-                    <span class="tag">CUDA</span>
-                </div>
-            </div>
-            <div class="skill-card reveal">
-                <h3><span class="icon">&#127760;</span> Web & Cloud</h3>
-                <div class="skill-tags">
-                    <span class="tag">Flask</span>
-                    <span class="tag">Selenium</span>
-                    <span class="tag">BeautifulSoup</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">AWS</span>
-                </div>
-            </div>
-            <div class="skill-card reveal">
-                <h3><span class="icon">&#128736;</span> Tools</h3>
-                <div class="skill-tags">
+                    <span class="tag">GCP</span>
+                    <span class="tag">BigQuery</span>
+                    <span class="tag">Vertex AI</span>
+                    <span class="tag">Airflow</span>
+                    <span class="tag">Tableau</span>
+                    <span class="tag">Power BI</span>
                     <span class="tag">Git</span>
-                    <span class="tag">Linux</span>
-                    <span class="tag">Jupyter</span>
                     <span class="tag">Docker</span>
+                    <span class="tag">Linux</span>
                 </div>
             </div>
         </div>
@@ -863,6 +951,73 @@
     </div>
 </section>
 
+<!-- Experience -->
+<section id="experience">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Career</p>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Aug 2024 &mdash; Present</div>
+                    <h3 class="timeline-title">Data Scientist</h3>
+                    <p class="timeline-sub">State of North Carolina &middot; Raleigh, NC</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Aug 2022 &mdash; Jul 2024</div>
+                    <h3 class="timeline-title">Data Scientist</h3>
+                    <p class="timeline-sub">Azericard &middot; Baku, AZ</p>
+                    <ul class="timeline-bullets">
+                        <li><strong>Internal Knowledge Assistant (LLM/RAG):</strong> Built an LLM-powered internal chatbot to enable stakeholders to query comprehensive card product information from the internal knowledge base</li>
+                        <li><strong>Churn Prediction:</strong> Developed predictive models using ensemble methods to identify causes of customer attrition, reducing churn in targeted retention campaigns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Oct 2020 &mdash; Jul 2022</div>
+                    <h3 class="timeline-title">Data Analyst</h3>
+                    <p class="timeline-sub">Kapital Bank OJSC &middot; Baku, AZ</p>
+                    <ul class="timeline-bullets">
+                        <li><strong>Automated Reporting Pipeline:</strong> Collaborated with stakeholders to formulate data solutions using SQL and Tableau, reducing report generation from days to hours</li>
+                        <li><strong>Product Launch Analytics:</strong> Analyzed performance metrics and product telemetry for newly shipped card products, conducting A/B tests</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Apr 2019 &mdash; Sep 2020</div>
+                    <h3 class="timeline-title">Junior Data Scientist</h3>
+                    <p class="timeline-sub">Azerconnect LLC &middot; Baku, AZ</p>
+                    <ul class="timeline-bullets">
+                        <li><strong>Marketing Campaign Optimization:</strong> Built customer micro-segmentation models, designed statistical experiments with hypothesis testing</li>
+                        <li><strong>4G Network Optimization:</strong> Utilized time series models and clustering algorithms on large-scale historical data</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Education -->
 <section id="education">
     <div class="container">
@@ -877,9 +1032,11 @@
                     <div class="timeline-line"></div>
                 </div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2024 &mdash; 2028</div>
-                    <h3 class="timeline-title">PhD in Computer Science</h3>
-                    <p class="timeline-sub">North Carolina State University, Raleigh, NC</p>
+                    <div class="timeline-date">Aug 2024 &mdash; Expected May 2028</div>
+                    <h3 class="timeline-title">PhD, Computer Science</h3>
+                    <p class="timeline-sub">North Carolina State University &middot; Raleigh, NC</p>
+                    <p class="timeline-gpa">GPA: 4.00 / 4.00</p>
+                    <p class="timeline-detail">Focus: AI system reliability and diagnostic frameworks for production environments</p>
                 </div>
             </div>
             <div class="timeline-item reveal">
@@ -888,9 +1045,11 @@
                     <div class="timeline-line"></div>
                 </div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2022 &mdash; 2024</div>
-                    <h3 class="timeline-title">Master's Degree</h3>
-                    <p class="timeline-sub">Graduate Studies</p>
+                    <div class="timeline-date">Aug 2022 &mdash; Jun 2024</div>
+                    <h3 class="timeline-title">Master of Science, Computer Science (Online)</h3>
+                    <p class="timeline-sub">The George Washington University &middot; Washington, DC</p>
+                    <p class="timeline-gpa">GPA: 3.93 / 4.00</p>
+                    <p class="timeline-detail">Specialization: Machine Learning and Distributed Systems</p>
                 </div>
             </div>
             <div class="timeline-item reveal">
@@ -898,16 +1057,18 @@
                     <div class="timeline-dot"></div>
                 </div>
                 <div class="timeline-content">
-                    <div class="timeline-date">2014 &mdash; 2019</div>
-                    <h3 class="timeline-title">Bachelor's Degree</h3>
-                    <p class="timeline-sub">Undergraduate Studies</p>
+                    <div class="timeline-date">Sep 2014 &mdash; Jun 2019</div>
+                    <h3 class="timeline-title">Bachelor of Business Administration</h3>
+                    <p class="timeline-sub">ADA University &middot; Baku, AZ</p>
+                    <p class="timeline-gpa">GPA: 3.88 / 4.00</p>
+                    <p class="timeline-detail">Focus: Business Analytics and Statistics</p>
                 </div>
             </div>
         </div>
 
         <!-- Languages -->
-        <div class="reveal">
-            <p class="section-label" style="margin-top:64px;">Communication</p>
+        <div class="reveal" style="margin-top:64px;">
+            <p class="section-label">Communication</p>
             <h2 class="section-title">Languages</h2>
         </div>
         <div class="languages-grid">
@@ -987,8 +1148,14 @@
     <div class="container reveal">
         <p class="section-label">Get in Touch</p>
         <h2>Let's Connect</h2>
-        <p>Interested in collaboration or have questions about my research? Feel free to reach out.</p>
-        <div class="social-links">
+        <p>Interested in discussing research or have questions? Feel free to reach out.</p>
+        <div>
+            <a href="mailto:tmehtiy@ncsu.edu" class="contact-email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+                tmehtiy@ncsu.edu
+            </a>
+        </div>
+        <div class="social-links" style="margin-top:20px;">
             <a href="https://github.com/tmehtiyev2019" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
                 <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             </a>
@@ -1034,7 +1201,7 @@
     themeToggle.addEventListener('click', toggleTheme);
     themeToggleMobile.addEventListener('click', toggleTheme);
 
-    // Show mobile theme toggle, hide desktop one based on breakpoint
+    // Show mobile theme toggle
     function handleResize() {
         if (window.innerWidth <= 768) {
             themeToggleMobile.style.display = 'block';
