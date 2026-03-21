@@ -513,50 +513,70 @@
             font-weight: 600;
         }
 
-        /* ===== Certifications ===== */
-        .certs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 12px;
+        /* ===== Research / Publications ===== */
+        .pub-stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
         }
 
-        .cert-item {
+        .pub-stats a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .pub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .pub-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
+            padding: 28px;
             transition: all var(--transition);
         }
 
-        .cert-item:hover {
+        .pub-card:hover {
             background: var(--bg-card-hover);
-            transform: translateY(-1px);
+            border-color: rgba(96, 165, 250, 0.15);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
 
-        .cert-icon {
-            width: 40px; height: 40px;
-            background: var(--accent-subtle);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .cert-info h4 {
-            font-size: 0.9rem;
+        .pub-card h4 {
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: var(--text);
         }
 
-        .cert-info span {
-            font-size: 0.8rem;
+        .pub-card .pub-authors {
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 6px;
         }
+
+        .pub-card .pub-venue {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .pub-link:hover { color: var(--accent-hover); }
 
         /* ===== Languages ===== */
         .languages-grid {
@@ -737,7 +757,7 @@
         @media (max-width: 480px) {
             .hero-links { flex-direction: column; }
             .btn { width: 100%; justify-content: center; }
-            .certs-grid { grid-template-columns: 1fr; }
+            .pub-grid { grid-template-columns: 1fr; }
             .languages-grid { grid-template-columns: 1fr 1fr; }
             .hero-photo img {
                 width: 160px;
@@ -757,6 +777,7 @@
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -965,9 +986,26 @@
                     <div class="timeline-line"></div>
                 </div>
                 <div class="timeline-content">
+                    <div class="timeline-date">Jan 2026 &mdash; Present</div>
+                    <h3 class="timeline-title">Graduate Researcher &mdash; AI Governance &amp; Policy</h3>
+                    <p class="timeline-sub">State of North Carolina &middot; Part-time &middot; Raleigh, NC</p>
+                    <ul class="timeline-bullets">
+                        <li>Conducting technical safety research for the AI Governance &amp; Safety subcommittee at North Carolina AI Leadership Council, researching comprehensive assessments of AI system testing, validation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
                     <div class="timeline-date">Aug 2024 &mdash; Present</div>
-                    <h3 class="timeline-title">Data Scientist</h3>
-                    <p class="timeline-sub">State of North Carolina &middot; Raleigh, NC</p>
+                    <h3 class="timeline-title">Doctoral Researcher &mdash; Testing Agentic AI Systems</h3>
+                    <p class="timeline-sub">North Carolina State University &middot; Full-time &middot; Raleigh, NC</p>
+                    <ul class="timeline-bullets">
+                        <li><strong>Agent Evaluation Framework:</strong> Developing systematic benchmarking methodologies for diagnosing failures in LLM-powered agents using behavioral trajectory analysis and pattern detection</li>
+                    </ul>
                 </div>
             </div>
             <div class="timeline-item reveal">
@@ -978,7 +1016,7 @@
                 <div class="timeline-content">
                     <div class="timeline-date">Aug 2022 &mdash; Jul 2024</div>
                     <h3 class="timeline-title">Data Scientist</h3>
-                    <p class="timeline-sub">Azericard &middot; Baku, AZ</p>
+                    <p class="timeline-sub">Azericard &middot; Full-time &middot; Baku, AZ</p>
                     <ul class="timeline-bullets">
                         <li><strong>Internal Knowledge Assistant (LLM/RAG):</strong> Built an LLM-powered internal chatbot to enable stakeholders to query comprehensive card product information from the internal knowledge base</li>
                         <li><strong>Churn Prediction:</strong> Developed predictive models using ensemble methods to identify causes of customer attrition, reducing churn in targeted retention campaigns</li>
@@ -993,10 +1031,24 @@
                 <div class="timeline-content">
                     <div class="timeline-date">Oct 2020 &mdash; Jul 2022</div>
                     <h3 class="timeline-title">Data Analyst</h3>
-                    <p class="timeline-sub">Kapital Bank OJSC &middot; Baku, AZ</p>
+                    <p class="timeline-sub">Kapital Bank OJSC &middot; Full-time &middot; Baku, AZ</p>
                     <ul class="timeline-bullets">
                         <li><strong>Automated Reporting Pipeline:</strong> Collaborated with stakeholders to formulate data solutions using SQL and Tableau, reducing report generation from days to hours</li>
                         <li><strong>Product Launch Analytics:</strong> Analyzed performance metrics and product telemetry for newly shipped card products, conducting A/B tests</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-marker">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Jul 2020 &mdash; Jun 2022</div>
+                    <h3 class="timeline-title">Data Analytics Consultant</h3>
+                    <p class="timeline-sub">Nexia &middot; Contract &middot; Baku, AZ</p>
+                    <ul class="timeline-bullets">
+                        <li>Analyzed large datasets to uncover trends, insights, and business opportunities for clients in the transportation and energy sectors</li>
                     </ul>
                 </div>
             </div>
@@ -1007,14 +1059,40 @@
                 <div class="timeline-content">
                     <div class="timeline-date">Apr 2019 &mdash; Sep 2020</div>
                     <h3 class="timeline-title">Junior Data Scientist</h3>
-                    <p class="timeline-sub">Azerconnect LLC &middot; Baku, AZ</p>
+                    <p class="timeline-sub">Azerconnect LLC &middot; Full-time &middot; Baku, AZ</p>
                     <ul class="timeline-bullets">
-                        <li><strong>Marketing Campaign Optimization:</strong> Built customer micro-segmentation models, designed statistical experiments with hypothesis testing</li>
-                        <li><strong>4G Network Optimization:</strong> Utilized time series models and clustering algorithms on large-scale historical data</li>
+                        <li><strong>Marketing Campaign Optimization:</strong> Built customer micro-segmentation models, designed statistical experiments with hypothesis testing on campaigns</li>
+                        <li><strong>4G Network Optimization:</strong> Utilized time series models and clustering algorithms on large-scale historical data to forecast network demand</li>
                     </ul>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Research -->
+<section id="research">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Research</p>
+            <h2 class="section-title">Publications</h2>
+            <p class="pub-stats">Cited by 32 &middot; <a href="https://scholar.google.com/citations?user=FxYW3ZwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+        </div>
+        <div class="pub-grid">
+            <div class="pub-card reveal">
+                <h4>Advancing EEG-Based Gaze Prediction Using Depthwise Separable Convolution and Enhanced Pre-Processing</h4>
+                <p class="pub-authors">ML Key, T Mehtiyev, X Qu</p>
+                <p class="pub-venue">International Conference on Human-Computer Interaction, 2024</p>
+            </div>
+            <div class="pub-card reveal">
+                <h4>Advancing EEG-Based Gaze Prediction: Depthwise Separable Convolution and Pre-Processing Enhancements in EEGViT</h4>
+                <p class="pub-authors">ML Key, T Mehtiyev, X Qu</p>
+                <p class="pub-venue">Preprint</p>
+            </div>
+        </div>
+        <a href="https://scholar.google.com/citations?user=FxYW3ZwAAAAJ&hl=en" target="_blank" rel="noopener" class="pub-link reveal">
+            View Google Scholar Profile &#8594;
+        </a>
     </div>
 </section>
 
@@ -1091,53 +1169,6 @@
                 <h4>Russian</h4>
                 <span>Limited Working Proficiency</span>
                 <div class="lang-bar"><div class="lang-bar-fill" style="width:50%"></div></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Certifications -->
-<section id="certifications">
-    <div class="container">
-        <div class="reveal">
-            <p class="section-label">Credentials</p>
-            <h2 class="section-title">Certifications</h2>
-        </div>
-        <div class="certs-grid">
-            <div class="cert-item reveal">
-                <div class="cert-icon">&#9729;</div>
-                <div class="cert-info">
-                    <h4>AWS Certified Cloud Practitioner</h4>
-                    <span>Amazon Web Services &middot; 2024</span>
-                </div>
-            </div>
-            <div class="cert-item reveal">
-                <div class="cert-icon">&#128013;</div>
-                <div class="cert-info">
-                    <h4>PCAP &mdash; Certified Associate in Python</h4>
-                    <span>Python Institute</span>
-                </div>
-            </div>
-            <div class="cert-item reveal">
-                <div class="cert-icon">&#128202;</div>
-                <div class="cert-info">
-                    <h4>Machine Learning Certification</h4>
-                    <span>DataCamp</span>
-                </div>
-            </div>
-            <div class="cert-item reveal">
-                <div class="cert-icon">&#128451;</div>
-                <div class="cert-info">
-                    <h4>SQL Certification</h4>
-                    <span>DataCamp</span>
-                </div>
-            </div>
-            <div class="cert-item reveal">
-                <div class="cert-icon">&#128640;</div>
-                <div class="cert-info">
-                    <h4>Data Science Certification</h4>
-                    <span>Coursera</span>
-                </div>
             </div>
         </div>
     </div>
